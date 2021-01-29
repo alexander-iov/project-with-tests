@@ -10,7 +10,7 @@ public class LocalDateWorking {
 
     public String formatting(){
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm yyyy/MM/dd");
-        return LocalDateTime.now().format(dateTimeFormatter);
+        return LocalDateTime.of(2021, 1,29,19,32).format(dateTimeFormatter);
     }
 
     public LocalDateTime parsing(){
