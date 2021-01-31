@@ -39,8 +39,8 @@ public class StackList implements IList, IStack{
     }
 
     @Override
-    public Integer getIndexByValue(int value) {
-        Integer index = 0;
+    public int getIndexByValue(int value) {
+        int index = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == value) {
                 index = i;
@@ -70,14 +70,19 @@ public class StackList implements IList, IStack{
                 break;
             }
         }
-        nextIndex--;
     }
 
     @Override
     public void removeByIndex(int index) {
-        if (numbers.length - index >= 0) {
-            System.arraycopy(numbers, index + 1, numbers, index, numbers.length - index);
+        int[] temp = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++){
+            if(numbers[i] == numbers[index]){
+                continue;
+            }
+            temp[i] = numbers[i];
         }
+        System.arraycopy(temp, 0, numbers, 0, temp.length);
+        nextIndex--;
     }
 
     @Override
@@ -115,3 +120,5 @@ public class StackList implements IList, IStack{
         return numbers[nextIndex];
     }
 }
+
+

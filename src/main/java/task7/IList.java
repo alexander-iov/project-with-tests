@@ -28,7 +28,7 @@ public interface IList {
     /**
      * @return index of first value occurrence. Return null if no value in the list.
      */
-    Integer getIndexByValue(int value);
+    int getIndexByValue(int value);
 
     boolean contains(int value);
 
