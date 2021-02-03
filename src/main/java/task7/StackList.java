@@ -1,6 +1,6 @@
 package task7;
 
-public class StackList implements IList, IStack{
+public class StackList implements IList, IStack {
 
     private final int[] numbers = new int[10];
     private int nextIndex = 0;
@@ -53,8 +53,8 @@ public class StackList implements IList, IStack{
     @Override
     public boolean contains(int value) {
         boolean con = false;
-        for (int num : numbers){
-            if (num == value){
+        for (int num : numbers) {
+            if (num == value) {
                 con = true;
                 break;
             }
@@ -75,8 +75,8 @@ public class StackList implements IList, IStack{
     @Override
     public void removeByIndex(int index) {
         int[] temp = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++){
-            if(numbers[i] == numbers[index]){
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == numbers[index]) {
                 continue;
             }
             temp[i] = numbers[i];
@@ -89,7 +89,7 @@ public class StackList implements IList, IStack{
     public IList subList(int fromIndex, int toIndex) {
         IList newList = new StackList();
         for (int i = fromIndex; i < toIndex; i++) {
-            newList.add(i);
+            newList.add(numbers[i]);
         }
         return newList;
     }
@@ -109,9 +109,8 @@ public class StackList implements IList, IStack{
 
     @Override
     public int pop() {
-        int value = numbers[nextIndex];
-        removeByIndex(nextIndex);
-        nextIndex--;
+        int value = numbers[nextIndex - 1];
+        removeByIndex(nextIndex - 1);
         return value;
     }
 
