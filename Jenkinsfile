@@ -30,5 +30,12 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+          steps {
+            sh 'echo Start deploying...'
+            sh 'echo ---------------------'
+            sh 'echo Finish deploying...'
+          }
+        }
     }
 }

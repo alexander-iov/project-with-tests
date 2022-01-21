@@ -1,5 +1,5 @@
 package task7;
-
+//https://github.com/alexander-iov/project-with-tests.git
 public class StackList implements IList, IStack {
 
     private final int[] numbers = new int[10];
